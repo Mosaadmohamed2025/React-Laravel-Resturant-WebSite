@@ -1,0 +1,317 @@
+* {
+
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: 0.2s linear;
+  -webkit-transition: 0.2s linear;
+  -moz-transition: 0.2s linear;
+  -ms-transition: 0.2s linear;
+  -o-transition: 0.2s linear;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+  }      
+  ::-webkit-scrollbar-thumb {
+    background-color: #df2020;
+    border-radius: 40px;
+  }
+  ::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+
+  
+
+.bg-main-bg{
+background-color: #f1f3f6;
+}
+
+.dark .dark\:bg-main-dark-bg {
+background-image: url('assets/images/background.jpg') !important;
+}
+
+
+/* loader */
+
+.loader{
+position: fixed;
+top:0; left:0; right:0; bottom: 0;
+z-index: 1000000;
+background-image: url('assets/images/background.jpg') !important;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.loader img{
+height: 25rem;
+}
+/* end loader */
+
+
+
+.Navleft{
+  left: -600px ;
+}
+
+.shadowaRound{
+  box-shadow: 0 0 0 100vw rgba(0, 0, 0, 0.3);
+}
+
+.icons{
+  display: flex;
+  flex-wrap: wrap;
+  gap:1.5rem;
+  margin-bottom: 2rem;
+  margin-top: 1rem;
+}
+
+
+
+
+/* product */
+.product__item {
+  border-radius: 20px;
+  text-align: center;
+  padding: 15px;
+  cursor: pointer;
+}
+
+.product__img {
+  margin-bottom: 20px;
+  transition: 0.4s;
+}
+
+.product__img:hover {
+  transform: translateY(-10px);
+}
+
+.product__content h5 a {
+  color: #212245;
+  font-size: 1rem;
+}
+
+.product__content h5 {
+  margin-bottom: 30px;
+}
+
+.product__price {
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: #df2020;
+}
+
+.addTOCart__btn {
+  border: none;
+  padding: 7px 25px;
+  color: #fff;
+  background-color: none;
+  border-radius: 25px;
+  font-size: 0.9rem;
+  border: 1px solid #333;
+}
+
+.review__text {
+color: #777;
+line-height: 30px;
+margin: 20px 0px;
+}
+
+.slider__content img {
+width: 5rem;
+height: 5rem;
+object-fit: cover;
+}
+/* end product */
+
+
+
+
+/* cart */
+.cart__badge {
+position: absolute;
+top: 4px;
+right: 0;
+background: #df2020;
+color: #fff;
+width: 15px;
+height: 15px;
+border-radius: 50%;
+font-size: 0.8rem;
+font-weight: 500;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+
+.cart__item-list {
+max-height: calc(100vh - 175px);
+overflow-y: scroll;
+}
+
+.cart__bottom {
+position: absolute;
+bottom: 0;
+left: 0;
+padding: 5px 20px;
+width: 100%;
+height: 80px;
+background: #df2020;
+}
+
+.cart__bottom h6 {
+font-size: 1rem;
+color: #fff;
+}
+
+.cart__bottom h6 span {
+font-size: 1.3rem;
+font-weight: 600;
+}
+
+.cart__bottom button {
+border: none;
+padding: 4px 20px;
+border-radius: 5px;
+background: #fff;
+color: #212245;
+}
+
+.cart__bottom button a {
+color: #212245;
+font-weight: 600;
+}
+/* end cart */
+
+
+
+
+
+
+
+
+/* common */
+.paginationBttns {
+width: 80%;
+height: 40px;
+margin: auto;
+display: flex;
+align-items: center;
+justify-content: center;
+column-gap: 0.5rem;
+list-style: none;
+margin-top: 30px;
+}
+
+.paginationBttns a {
+padding: 5px 13px;
+background: #212245;
+color: #fff !important;
+border-radius: 5px;
+display: flex;
+align-items: center;
+justify-content: center;
+cursor: pointer;
+margin: 5px;
+}
+
+.paginationBttns a:hover {
+background: #df2020;
+}
+
+
+.common__section {
+background: linear-gradient(#212245b2, #212245b2),
+  url("assets/images/banner-02.jpg");
+
+background-repeat: no-repeat;
+background-size: cover;
+background-position: center;
+padding: 80px 0px;
+}
+
+/* end common */
+
+
+
+
+
+
+
+/* media */
+@media  (max-width: 768px) {
+.review__text {
+  font-size: 0.8rem;
+  margin: 10px 0px;
+}
+
+.slider__content img {
+  width: 35px;
+  height: 35px;
+}
+
+.slider__content h6 {
+  font-size: 0.8rem;
+}
+.animg{
+ display: none;
+}
+
+}
+
+th {
+text-align: center;
+}
+
+.cart__img-box {
+width: 80px;
+}
+
+.cart__img-box img {
+width: 100%;
+}
+
+.cart__item-del i {
+cursor: pointer;
+}
+
+.cart__page-btn button a:hover {
+color: #fff;
+}
+
+.cart__subtotal {
+color: #df2020;
+font-size: 1.5rem;
+}
+
+@media only screen and (max-width: 768px) {
+th,
+td {
+  font-size: 0.8rem;
+}
+}
+
+
+
+@media  (max-width: 992px) {
+  .product__content h5 a {
+    font-size: 0.8rem;
+  }
+
+  .addTOCart__btn {
+    padding: 5px 15px;
+    font-size: 0.7rem;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .cart {
+    width: 300px !important;
+  }
+}
+/* end media */

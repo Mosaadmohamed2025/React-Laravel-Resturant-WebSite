@@ -1,0 +1,13 @@
+export { default as AllMeals } from './AllMeals';
+export { default as Cart } from './Cart';
+export { default as Checkout } from './Checkout';
+export { default as Contact } from './Contact';
+export { default as FoodDetails } from './FoodDetails';
+export { default as Home } from './Home';
+export { default as Login } from './Login';
+export { default as OrderTracking } from './OrderTracking';
+export { default as Questions } from './Questions';
+export { default as Register } from './Register';
+export { default as Restaurantwebsites } from './Restaurantlocations';
+export { default as Orders } from './Orders';
+export { default as Profile } from './Profile';
