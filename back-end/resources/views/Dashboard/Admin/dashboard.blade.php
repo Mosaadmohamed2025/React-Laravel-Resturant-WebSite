@@ -3,11 +3,6 @@
 Dashboard
 @stop
 
-@section('css')
-
-<!-- Maps css -->
-<link href="{{URL::asset('Dashboard/plugins/jqvmap/jqvmap.min.css')}}" rel="stylesheet">
-@endsection
 @section('page-header')
 				<!-- breadcrumb -->
 				<div class="breadcrumb-header justify-content-between">
@@ -17,7 +12,7 @@ Dashboard
 						</div>
 					</div>
 					<div class="main-dashboard-header-right">
-						
+
 					</div>
 				</div>
 				<!-- /breadcrumb -->
@@ -69,7 +64,7 @@ Dashboard
 												@php
 												$count_all= \App\Models\Order::count();
 												$count_orderUnPaid = \App\Models\Order::where('status', 0)->count();
-			
+
 												if($count_orderUnPaid == 0){
 												   echo $count_orderUnPaid = 0;
 												}
@@ -77,7 +72,7 @@ Dashboard
 												   echo $count_orderUnPaid = $count_orderUnPaid / $count_all *100;
 												}
 												@endphp
-			
+
 											</span>
 										</span>
 									</div>
@@ -105,7 +100,7 @@ Dashboard
 												@php
 													$count_all= \App\Models\Order::count();
 													$count_OrdersPaid = \App\Models\Order::where('status', 1)->count();
-			
+
 													if($count_OrdersPaid == 0){
 													   echo $count_OrdersPaid = 0;
 													}
@@ -132,7 +127,7 @@ Dashboard
 											<h4 class="tx-20 font-weight-bold mb-1 text-white">Resturant : {{ number_format(\App\Models\Resturant::count())}}</h4>
 											<p class="mb-0 tx-12 text-white op-7">Employees : {{ number_format(\App\Models\Employee::count())}}</p>
 										</div>
-										
+
 									</div>
 								</div>
 							</div>
@@ -150,11 +145,11 @@ Dashboard
 									<h4 class="card-title mb-0">Statistical percentage of orders</h4>
 									<i class="mdi mdi-dots-horizontal text-gray"></i>
 								</div>
-			
+
 							</div>
 							<div class="card-body" style="width: 70%">
 								{!! $chartjs->render() !!}
-			
+
 							</div>
 						</div>
 					</div>
@@ -176,7 +171,6 @@ Dashboard
 <!--Internal  Chart.bundle js -->
 <script src="{{URL::asset('Dashboard/plugins/chart.js/Chart.bundle.min.js')}}"></script>
 <!-- Moment js -->
-<script src="{{URL::asset('Dashboard/plugins/raphael/raphael.min.js')}}"></script>
 <!--Internal  Flot js-->
 <script src="{{URL::asset('Dashboard/plugins/jquery.flot/jquery.flot.js')}}"></script>
 <script src="{{URL::asset('Dashboard/plugins/jquery.flot/jquery.flot.pie.js')}}"></script>
@@ -192,5 +186,5 @@ Dashboard
 <script src="{{URL::asset('Dashboard/js/modal-popup.js')}}"></script>
 <!--Internal  index js -->
 <script src="{{URL::asset('Dashboard/js/index.js')}}"></script>
-<script src="{{URL::asset('Dashboard/js/jquery.vmap.sampledata.js')}}"></script>	
+<script src="{{URL::asset('Dashboard/js/jquery.vmap.sampledata.js')}}"></script>
 @endsection

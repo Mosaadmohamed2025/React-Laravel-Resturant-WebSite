@@ -2,11 +2,6 @@
 @section('title')
 Login
 @stop
-
-@section('css')
-    <!-- Sidemenu-respoansive-tabs css -->
-    <link href="{{URL::asset('Dashboard/plugins/sidemenu-responsive-tabs/css/sidemenu-responsive-tabs.css')}}" rel="stylesheet">
-@endsection
 @section('content')
     <div class="container-fluid">
         <div class="row no-gutter">
