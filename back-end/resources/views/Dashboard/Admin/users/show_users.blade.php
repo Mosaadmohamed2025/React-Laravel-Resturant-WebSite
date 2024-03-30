@@ -1,58 +1,44 @@
-
 @extends('Dashboard.layouts.master')
-@section('css')
 
 @section('title')
-Users
+    Users
 @stop
 
-<!-- Internal Data table css -->
-
-<link href="{{ URL::asset('Dashboard/plugins/datatable/css/dataTables.bootstrap4.min.css') }}" rel="stylesheet" />
-<link href="{{ URL::asset('Dashboard/plugins/datatable/css/buttons.bootstrap4.min.css') }}" rel="stylesheet">
-<link href="{{ URL::asset('Dashboard/plugins/datatable/css/responsive.bootstrap4.min.css') }}" rel="stylesheet" />
-<link href="{{ URL::asset('Dashboard/plugins/datatable/css/jquery.dataTables.min.css') }}" rel="stylesheet">
-<link href="{{ URL::asset('Dashboard/plugins/datatable/css/responsive.dataTables.min.css') }}" rel="stylesheet">
-<!--Internal   Notify -->
-<link href="{{ URL::asset('Dashboard/plugins/notify/css/notifIt.css') }}" rel="stylesheet" />
-
-@endsection
 @section('page-header')
-<!-- breadcrumb -->
-<div class="breadcrumb-header justify-content-between">
-    <div class="my-auto">
-        <div class="d-flex">
-            <h4 class="content-title mb-0 my-auto">Users</h4><span class="text-muted mt-1 tx-13 mr-2 mb-0">/
+    <!-- breadcrumb -->
+    <div class="breadcrumb-header justify-content-between">
+        <div class="my-auto">
+            <div class="d-flex">
+                <h4 class="content-title mb-0 my-auto">Users</h4><span class="text-muted mt-1 tx-13 mr-2 mb-0">/
                 Users List</span>
+            </div>
         </div>
     </div>
-</div>
-<!-- breadcrumb -->
+    <!-- breadcrumb -->
 @endsection
 
 @section('content')
+    @if (session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+    @endif
 
-@if (session('success'))
-    <div class="alert alert-success">
-        {{ session('success') }}
-    </div>
-@endif
-
-<!-- row opened -->
-<div class="row row-sm">
-    <div class="col-xl-12">
-        <div class="card">
-            <div class="card-header pb-0">
-                <div class="col-sm-1 col-md-2">
-                    @can('اضافة مستخدم')
-                        <a class="btn btn-primary btn-sm" href="{{ route('users.create') }}">Add User</a>
-                    @endcan
+    <!-- row opened -->
+    <div class="row row-sm">
+        <div class="col-xl-12">
+            <div class="card">
+                <div class="card-header pb-0">
+                    <div class="col-sm-1 col-md-2">
+                        @can('اضافة مستخدم')
+                            <a class="btn btn-primary btn-sm" href="{{ route('users.create') }}">Add User</a>
+                        @endcan
+                    </div>
                 </div>
-            </div>
-            <div class="card-body">
-                <div class="table-responsive hoverable-table">
-                    <table class="table table-hover" id="example1" data-page-length='50' style=" text-align: center;">
-                        <thead>
+                <div class="card-body">
+                    <div class="table-responsive hoverable-table">
+                        <table class="table table-hover" id="example1" data-page-length='50' style="text-align: center;">
+                            <thead>
                             <tr>
                                 <th class="wd-10p border-bottom-0">#</th>
                                 <th class="wd-15p border-bottom-0">user name</th>
@@ -61,8 +47,8 @@ Users
                                 <th class="wd-15p border-bottom-0">User Role</th>
                                 <th class="wd-10p border-bottom-0">Process</th>
                             </tr>
-                        </thead>
-                        <tbody>
+                            </thead>
+                            <tbody>
                             @foreach ($data as $key => $user)
                                 <tr>
                                     <td>{{ ++$i }}</td>
@@ -70,18 +56,17 @@ Users
                                     <td>{{ $user->email }}</td>
                                     <td>
                                         @if ($user->Status == 'مفعل')
-                                            <span class="label text-success d-flex" style=" display: flex;align-items: center;justify-content: center; flex-direction: column;">
+                                            <span class="label text-success d-flex" style="display: flex; align-items: center; justify-content: center; flex-direction: column;">
                                                 <div class="dot-label bg-success ml-1"></div>
                                                 <span style="margin-right: 20px">{{ $user->Status }}</span>
                                             </span>
                                         @else
-                                            <span class="label text-danger d-flex" style=" display: flex;align-items: center;justify-content: center; flex-direction: column;">
-                                                <div class="dot-label bg-danger ml-1" ></div>
+                                            <span class="label text-danger d-flex" style="display: flex; align-items: center; justify-content: center; flex-direction: column;">
+                                                <div class="dot-label bg-danger ml-1"></div>
                                                 <span style="margin-right: 30px">{{ $user->Status }}</span>
                                             </span>
                                         @endif
                                     </td>
-
                                     <td>
                                         @if (!empty($user->getRoleNames()))
                                             @foreach ($user->getRoleNames() as $v)
@@ -89,24 +74,22 @@ Users
                                             @endforeach
                                         @endif
                                     </td>
-
                                     <td>
                                         @can('تعديل مستخدم')
                                             <a href="{{ route('users.edit', $user->id) }}" class="btn btn-sm btn-info"
-                                                title="تعديل"><i class="las la-pen"></i></a>
+                                               title="تعديل"><i class="las la-pen"></i></a>
                                         @endcan
                                         @can('حذف مستخدم')
-
                                             <a class="modal-effect btn btn-sm btn-danger" data-effect="effect-scale"
-                                                data-user_id="{{ $user->id }}" data-username="{{ $user->name }}"
-                                                data-toggle="modal" href="#modaldemo8" title="حذف"><i
-                                                    class="las la-trash"></i></a>
+                                               data-user_id="{{ $user->id }}" data-username="{{ $user->name }}"
+                                               data-toggle="modal" href="#modaldemo8" title="حذف"><i class="las la-trash"></i></a>
                                         @endcan
                                     </td>
                                 </tr>
                             @endforeach
-                        </tbody>
-                    </table>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
@@ -118,8 +101,10 @@ Users
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content modal-content-demo">
                 <div class="modal-header">
-                    <h6 class="modal-title">Delete User</h6><button aria-label="Close" class="close"
-                        data-dismiss="modal" type="button"><span aria-hidden="true">&times;</span></button>
+                    <h6 class="modal-title">Delete User</h6>
+                    <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                 </div>
                 <form action="{{ route('users.destroy', 'test') }}" method="post">
                     {{ method_field('delete') }}
@@ -133,51 +118,26 @@ Users
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                         <button type="submit" class="btn btn-danger">Confirm</button>
                     </div>
+                </form>
             </div>
-            </form>
         </div>
     </div>
-</div>
-
-</div>
-<!-- /row -->
-</div>
-<!-- Container closed -->
-</div>
-<!-- main-content closed -->
+    <!-- /row -->
 @endsection
 @section('js')
-<!-- Internal Data tables -->
-<script src="{{ URL::asset('Dashboard/plugins/datatable/js/jquery.dataTables.min.js') }}"></script>
-<script src="{{ URL::asset('Dashboard/plugins/datatable/js/dataTables.dataTables.min.js') }}"></script>
-<script src="{{ URL::asset('Dashboard/plugins/datatable/js/dataTables.responsive.min.js') }}"></script>
-<script src="{{ URL::asset('Dashboard/plugins/datatable/js/responsive.dataTables.min.js') }}"></script>
-<script src="{{ URL::asset('Dashboard/plugins/datatable/js/jquery.dataTables.js') }}"></script>
-<script src="{{ URL::asset('Dashboard/plugins/datatable/js/dataTables.bootstrap4.js') }}"></script>
-<script src="{{ URL::asset('Dashboard/plugins/datatable/js/dataTables.buttons.min.js') }}"></script>
-<script src="{{ URL::asset('Dashboard/plugins/datatable/js/dataTables.responsive.min.js') }}"></script>
-<script src="{{ URL::asset('Dashboard/plugins/datatable/js/responsive.bootstrap4.min.js') }}"></script>
-<!--Internal  Datatable js -->
-<script src="{{ URL::asset('Dashboard/js/table-data.js') }}"></script>
-<!--Internal  Notify js -->
-<script src="{{ URL::asset('Dashboard/plugins/notify/js/notifIt.js') }}"></script>
-<script src="{{ URL::asset('Dashboard/plugins/notify/js/notifit-custom.js') }}"></script>
-<!-- Internal Modal js-->
-<script src="{{ URL::asset('Dashboard/js/modal.js') }}"></script>
+    <script>
+        $('#modaldemo8').on('show.bs.modal', function(event) {
+            var button = $(event.relatedTarget)
+            var user_id = button.data('user_id')
+            var username = button.data('username')
+            var modal = $(this)
+            modal.find('.modal-body #user_id').val(user_id);
+            modal.find('.modal-body #username').val(username);
+        })
 
-<script>
-    $('#modaldemo8').on('show.bs.modal', function(event) {
-        var button = $(event.relatedTarget)
-        var user_id = button.data('user_id')
-        var username = button.data('username')
-        var modal = $(this)
-        modal.find('.modal-body #user_id').val(user_id);
-        modal.find('.modal-body #username').val(username);
-    })
-
-</script>
+    </script>
 
 
 @endsection
 
-    
+

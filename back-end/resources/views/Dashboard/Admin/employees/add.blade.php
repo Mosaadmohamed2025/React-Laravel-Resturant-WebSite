@@ -1,22 +1,7 @@
 @extends('Dashboard.layouts.master')
-@section('css')
-    <!--Internal Sumoselect css-->
-    <link rel="stylesheet" href="{{ URL::asset('Dashboard/plugins/sumoselect/sumoselect-rtl.css') }}">
-    <link href="{{URL::asset('dashboard/plugins/notify/css/notifIt.css')}}" rel="stylesheet"/>
-
-    <!-- Internal Select2 css -->
-    <link href="{{URL::asset('Dashboard/plugins/select2/css/select2.min.css')}}" rel="stylesheet">
-    <!--Internal  Datetimepicker-slider css -->
-    <link href="{{URL::asset('Dashboard/plugins/amazeui-datetimepicker/css/amazeui.datetimepicker.css')}}" rel="stylesheet">
-    <link href="{{URL::asset('Dashboard/plugins/jquery-simple-datetimepicker/jquery.simple-dtpicker.css')}}" rel="stylesheet">
-    <link href="{{URL::asset('Dashboard/plugins/pickerjs/picker.min.css')}}" rel="stylesheet">
-    <!-- Internal Spectrum-colorpicker css -->
-    <link href="{{URL::asset('Dashboard/plugins/spectrum-colorpicker/spectrum.css')}}" rel="stylesheet">
-
 @section('title')
     Add Employee
 @stop
-@endsection
 @section('page-header')
     <!-- breadcrumb -->
     <div class="breadcrumb-header justify-content-between">
@@ -52,7 +37,7 @@
                                     <input class="form-control" name="name" type="text" autofocus>
                                 </div>
                             </div>
-                            
+
                             <div class="row row-xs align-items-center mg-b-20">
                                 <div class="col-md-1">
                                     <label for="exampleInputEmail1">
@@ -63,7 +48,7 @@
                                     <input id="email" type="email" class="form-control"  name="email"  required autocomplete="email" autofocus>
                                 </div>
                             </div>
-                            
+
                             <div class="row row-xs align-items-center mg-b-20">
                                 <div class="col-md-1">
                                     <label for="exampleInputEmail1">
@@ -95,7 +80,7 @@
                             <div class="row row-xs align-items-center mg-b-20">
                                 <div class="col-md-1">
                                     <label for="exampleInputEmail1">
-                                    Upload 
+                                    Upload
                                     </label>
                                 </div>
                                 <div class="col-md-11 mg-t-5 mg-md-t-0">

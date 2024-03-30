@@ -2,12 +2,7 @@
 @section('title')
     Resturants
 @stop
-@section('css')
-    <!-- Internal Data table css -->
-    <link href="{{URL::asset('Dashboard/plugins/select2/css/select2.min.css')}}" rel="stylesheet">
-    <!--Internal   Notify -->
-    <link href="{{URL::asset('dashboard/plugins/notify/css/notifIt.css')}}" rel="stylesheet"/>
-@endsection
+
 @section('page-header')
 				<!-- breadcrumb -->
 				<div class="breadcrumb-header justify-content-between">
@@ -129,12 +124,4 @@
 			<!-- Container closed -->
 
 		<!-- main-content closed -->
-@endsection
-@section('js')
-
-
-    <!--Internal  Notify js -->
-    <script src="{{URL::asset('dashboard/plugins/notify/js/notifIt.js')}}"></script>
-    <script src="{{URL::asset('/plugins/notify/js/notifit-custom.js')}}"></script>
-
 @endsection

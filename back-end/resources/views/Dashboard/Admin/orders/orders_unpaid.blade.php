@@ -1,10 +1,7 @@
 @extends('Dashboard.layouts.master')
 @section('title')
-UnPaid Orders 
+UnPaid Orders
 @stop
-@section('css')
-    <link href="{{URL::asset('dashboard/plugins/notify/css/notifIt.css')}}" rel="stylesheet"/>
-@endsection
 
 
 @section('page-header')
@@ -63,7 +60,7 @@ UnPaid Orders
             <div class="card mg-b-20">
                 <div class="card-header pb-0">
 
-                  
+
                     <button type="button" class="btn btn-danger" id="btn_delete_all">Delete Selected</button>
 
 
@@ -112,7 +109,7 @@ UnPaid Orders
                                             <span class="text-success">Paid</span>
                                         @elseif($order->status == 0)
                                             <span class="text-danger"> UnPaid</span>
-                                        @endif 
+                                        @endif
                                     </td>
                                     <td>{{ $order->total }}</td>
                                     <td>
@@ -127,9 +124,9 @@ UnPaid Orders
 
                                     </td>
                                 </tr>
-                                @include('Dashboard.Admin.orders.delete') 
+                                @include('Dashboard.Admin.orders.delete')
                                 @include('Dashboard.Admin.orders.delete_select')
-                                @include('Dashboard.Admin.orders.update_status') 
+                                @include('Dashboard.Admin.orders.update_status')
                             @endforeach
                             </tbody>
                         </table>
@@ -146,10 +143,6 @@ UnPaid Orders
     <!-- main-content closed -->
 @endsection
 @section('js')
-    <!--Internal  Notify js -->
-    <script src="{{URL::asset('dashboard/plugins/notify/js/notifIt.js')}}"></script>
-    <script src="{{URL::asset('/plugins/notify/js/notifit-custom.js')}}"></script>
-
     <script>
         $(function() {
             jQuery("[name=select_all]").click(function(source) {
