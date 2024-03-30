@@ -2,10 +2,6 @@
 @section('title')
     Products
 @stop
-@section('css')
-    <link href="{{URL::asset('dashboard/plugins/notify/css/notifIt.css')}}" rel="stylesheet"/>
-@endsection
-
 
 @section('page-header')
     <!-- breadcrumb -->
@@ -137,9 +133,6 @@
     <!-- main-content closed -->
 @endsection
 @section('js')
-    <!--Internal  Notify js -->
-    <script src="{{URL::asset('dashboard/plugins/notify/js/notifIt.js')}}"></script>
-    <script src="{{URL::asset('/plugins/notify/js/notifit-custom.js')}}"></script>
 
     <script>
         $(function() {
